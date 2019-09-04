@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Student List</title>
+</head>
+
+<body>
+    <main>
+        <div id="fsbuttons">
+            <button class="fsbtn" onclick="sortByName()">Sort A-Z by name</button>
+            <button class="fsbtn" onclick="sortByHouse()">Sort A-Z by house</button>
+            <button class="fsbtn" onclick="showAll()">Show all students</button>
+            <button class="fsbtn" onclick="byRavenclaw()">Filter by Ravenclaw house</button>
+            <button class="fsbtn" onclick="byHufflepuff()">Filter by Hufflepuff house</button>
+            <button class="fsbtn" onclick="byGryffindor()">Filter by Gryffindor house</button>
+            <button class="fsbtn" onclick="bySlytherin()">Filter by Slytherin house</button>
+        </div>
+
+    </main>
+
+
+    <template id="content">
+        <div id="container">
+            <ul>
+                <li id="name"></li>
+                <li id="house"></li>
+                <button id="myBtn">More info</button>
+            </ul>
+
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                </div>
+            </div>
+        </div>
+    </template>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>

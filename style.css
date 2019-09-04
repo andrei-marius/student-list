@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#container {
+  width: 185px;
+  display: block;
+}
+
+ul {
+  list-style-type: none;
+  display: -webkit-inline-box;
+}
+
+li {
+  padding: 0 15px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#fsbuttons {
+  display: inline;
+  color: #ffffff;
+  line-height: 100px;
+  margin: 0 2%;
+
+}
+
+.fsbtn {
+  border: none;
+  outline: none;
+  padding: 9px 12px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.fsbtn:hover {
+  background-color: #ddd;
+}
+
+.fsbtn.active {
+  background-color: #666;
+  color: white;
+}
+
+#myBtn {
+  border: none;
+  outline: none;
+  padding: 3px 11px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  margin: 0 18px;
+}
+
+#myBtn:hover {
+  background-color: #ddd;
+}
