@@ -38,13 +38,17 @@ ul {
   font-size: 0.6em;
 }
 
-.myInquisitorial{
+.myInquisitorial {
   display: none;
   border: none;
   outline: none;
   padding: 7px 11px;
   background-color: #f1f1f1;
   cursor: pointer;
+}
+
+.myInquisitorial:hover {
+  background-color: #ddd;
 }
 
 .close {

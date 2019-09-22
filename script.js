@@ -73,20 +73,20 @@ function show(data) {
         newStudent.house = house;
 
 
-        if(!familiesList.pure.includes(lastName) && !familiesList.half.includes(lastName)){
+        if (!familiesList.pure.includes(lastName) && !familiesList.half.includes(lastName)) {
             newStudent.blood = 'Plain muggle';
         }
 
-        if(!familiesList.pure.includes(lastName) && familiesList.half.includes(lastName)){
+        if (!familiesList.pure.includes(lastName) && familiesList.half.includes(lastName)) {
             newStudent.blood = 'Plain muggle';
         }
 
-        if(familiesList.pure.includes(lastName) && !familiesList.half.includes(lastName)){
+        if (familiesList.pure.includes(lastName) && !familiesList.half.includes(lastName)) {
             newStudent.blood = 'Pure wizard';
             clone.querySelector(".myInquisitorial").style.display = "inline-block";
         }
 
-        if(familiesList.pure.includes(lastName) && familiesList.half.includes(lastName)){
+        if (familiesList.pure.includes(lastName) && familiesList.half.includes(lastName)) {
             newStudent.blood = 'Half wizard';
         }
 
@@ -111,7 +111,7 @@ function show(data) {
                 modal.style.display = "none";
             }
         }
-        
+
         main.appendChild(clone);
     });
 
@@ -190,11 +190,11 @@ function showMore(modalData, modal) {
         modal.querySelector(".crest").src = "images/hufflepuff_crest.png";
         modal.querySelector(".modalHouse").style.textShadow = "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black";
     }
-    
+
     if (modalData.firstName === `Andrei-Marius`) {
         modal.querySelector(".modalImg").src = "images/voldemort.png";
     }
-    
+
     modal.querySelector(".modalFirstName").textContent = "First name: " + modalData.firstName;
     modal.querySelector(".modalLastName").textContent = "Last name: " + modalData.lastName;
     modal.querySelector(".modalHouse").textContent = "House: " + modalData.house;
@@ -216,11 +216,11 @@ function showChanged(newData) {
             clone.querySelector(".firstName").textContent = "First name: " + student.fullname;
         }
 
-        if(familiesList.pure.includes(student.lastName) && !familiesList.half.includes(student.lastName)){
+        if (familiesList.pure.includes(student.lastName) && !familiesList.half.includes(student.lastName)) {
             clone.querySelector(".myInquisitorial").style.display = "inline-block";
         }
 
-        if(inquisitorialSquad.indexOf(student) != -1){
+        if (inquisitorialSquad.indexOf(student) != -1) {
             clone.querySelector(".myInquisitorial").textContent = "Remove from inquisitorial squad";
 
         }
@@ -239,19 +239,19 @@ function showChanged(newData) {
 
         if (student.house === `Slytherin`) {
             modal.querySelector(".modalHouse").style.color = `green`;
-            modal.querySelector(".crest").src = "images/slytherin_crest.png";  
+            modal.querySelector(".crest").src = "images/slytherin_crest.png";
         } else
         if (student.house === `Gryffindor`) {
             modal.querySelector(".modalHouse").style.color = `red`;
-            modal.querySelector(".crest").src = "images/gryffindor_crest.png";  
+            modal.querySelector(".crest").src = "images/gryffindor_crest.png";
         } else
         if (student.house === `Ravenclaw`) {
             modal.querySelector(".modalHouse").style.color = `blue`;
-            modal.querySelector(".crest").src = "images/ravenclaw_crest.png"; 
+            modal.querySelector(".crest").src = "images/ravenclaw_crest.png";
         } else
         if (student.house === `Hufflepuff`) {
             modal.querySelector(".modalHouse").style.color = `yellow`;
-            modal.querySelector(".crest").src = "images/hufflepuff_crest.png"; 
+            modal.querySelector(".crest").src = "images/hufflepuff_crest.png";
             modal.querySelector(".modalHouse").style.textShadow = `-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black`;
         }
 
@@ -328,29 +328,29 @@ function showSquad() {
     showChanged(newStudents)
 }
 
-function addToInquisitorial(button){
+function addToInquisitorial(button) {
     let firstNameStudent = button.parentNode.firstChild.nextElementSibling.nextElementSibling.textContent;
 
     let myStudent;
 
     studentList.forEach((student) => {
-        if(firstNameStudent.includes(student.firstName)){
+        if (firstNameStudent.includes(student.firstName)) {
             myStudent = student;
         }
     })
 
-    if(button.textContent == 'Add to Inquisitorial Squad'){
+    if (button.textContent == 'Add to Inquisitorial Squad') {
         button.textContent = 'Remove from inquisitorial squad';
-        if(inquisitorialSquad.indexOf(myStudent) == -1){
+        if (inquisitorialSquad.indexOf(myStudent) == -1) {
             inquisitorialSquad.push(myStudent);
         }
-    }else{
+    } else {
         const index = inquisitorialSquad.indexOf(myStudent);
         inquisitorialSquad.splice(index, 1);
         button.textContent = 'Add to Inquisitorial Squad';
     }
 
-    
+
 }
 
 function byHufflepuff() {
@@ -400,52 +400,50 @@ function deleteStudent(element) {
 /* for adding and removing prefects */
 function makePrefect(makePrefectButton) {
     // console.log(makePrefectButton.previousElementSibling);
-    if(makePrefectButton.previousElementSibling.textContent == 'House: Slytherin'){
+    if (makePrefectButton.previousElementSibling.textContent == 'House: Slytherin') {
         // if (slytherinPrefects === 0) {
         //     makePrefectButton.nextElementSibling.style.display = "block";
         // } else {
         //     makePrefectButton.nextElementSibling.style.display = "none";
         // }
-        if(slytherinPrefects>0 && makePrefectButton.textContent != 'Remove this student from Prefects'){
+        if (slytherinPrefects > 0 && makePrefectButton.textContent != 'Remove this student from Prefects') {
             slytherinPrefects--;
             makePrefectButton.textContent = "Remove this student from Prefects";
-        }else if(makePrefectButton.textContent == 'Remove this student from Prefects'){
+        } else if (makePrefectButton.textContent == 'Remove this student from Prefects') {
             slytherinPrefects++;
             makePrefectButton.textContent = "Make this student a Prefect";
         }
     }
 
-    if(makePrefectButton.previousElementSibling.textContent == 'House: Ravenclaw'){
-        if(ravenclawPrefects>0 && makePrefectButton.textContent != 'Remove this student from Prefects'){
+    if (makePrefectButton.previousElementSibling.textContent == 'House: Ravenclaw') {
+        if (ravenclawPrefects > 0 && makePrefectButton.textContent != 'Remove this student from Prefects') {
             ravenclawPrefects--;
             makePrefectButton.textContent = "Remove this student from Prefects";
-        }else if(makePrefectButton.textContent == 'Remove this student from Prefects'){
+        } else if (makePrefectButton.textContent == 'Remove this student from Prefects') {
             ravenclawPrefects++;
             makePrefectButton.textContent = "Make this student a Prefect";
         }
     }
 
-    if(makePrefectButton.previousElementSibling.textContent == 'House: Gryffindor'){
-        if(gryffindorPrefects>0 && makePrefectButton.textContent != 'Remove this student from Prefects'){
+    if (makePrefectButton.previousElementSibling.textContent == 'House: Gryffindor') {
+        if (gryffindorPrefects > 0 && makePrefectButton.textContent != 'Remove this student from Prefects') {
             gryffindorPrefects--;
             makePrefectButton.textContent = "Remove this student from Prefects";
-        }else if(makePrefectButton.textContent == 'Remove this student from Prefects'){
+        } else if (makePrefectButton.textContent == 'Remove this student from Prefects') {
             gryffindorPrefects++;
             makePrefectButton.textContent = "Make this student a Prefect";
         }
     }
 
-    if(makePrefectButton.previousElementSibling.textContent == 'House: Hufflepuff'){
-        if(hufflepuffPrefects>0 && makePrefectButton.textContent != 'Remove this student from Prefects'){
+    if (makePrefectButton.previousElementSibling.textContent == 'House: Hufflepuff') {
+        if (hufflepuffPrefects > 0 && makePrefectButton.textContent != 'Remove this student from Prefects') {
             hufflepuffPrefects--;
             makePrefectButton.textContent = "Remove this student from Prefects";
-        }else if(makePrefectButton.textContent == 'Remove this student from Prefects'){
+        } else if (makePrefectButton.textContent == 'Remove this student from Prefects') {
             hufflepuffPrefects++;
             makePrefectButton.textContent = "Make this student a Prefect";
         }
     }
 
- 
+
 }
-
-
