@@ -14,11 +14,6 @@ body {
 
 ul {
   list-style-type: none;
-  display: -webkit-inline-box;
-}
-
-li {
-  padding: 0 15px;
 }
 
 .modal {
@@ -36,10 +31,20 @@ li {
 
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
+  margin: 10% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+  font-size: 0.6em;
+}
+
+.myInquisitorial{
+  display: none;
+  border: none;
+  outline: none;
+  padding: 7px 11px;
+  background-color: #f1f1f1;
+  cursor: pointer;
 }
 
 .close {
@@ -59,9 +64,7 @@ li {
 #fsbuttons {
   display: inline;
   color: #ffffff;
-  line-height: 100px;
-  margin: 0 2%;
-
+  line-height: 50px;
 }
 
 .fsbtn {
@@ -76,20 +79,73 @@ li {
   background-color: #ddd;
 }
 
-.fsbtn.active {
-  background-color: #666;
-  color: white;
-}
-
-#myBtn {
+.myBtn {
   border: none;
   outline: none;
-  padding: 3px 11px;
+  padding: 7px 11px;
   background-color: #f1f1f1;
   cursor: pointer;
-  margin: 0 18px;
+  margin: 13px 0;
 }
 
-#myBtn:hover {
+.myBtn:hover {
   background-color: #ddd;
+}
+
+.myDelete {
+  border: none;
+  outline: none;
+  padding: 7px 11px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  margin: 0 27px;
+}
+
+.myDelete:hover {
+  background-color: #ddd;
+}
+
+#topData-container {
+  margin: 1.8em 0 0 1.8em
+}
+
+.topData {
+  font-size: 1.2em;
+}
+
+.makePrefect {
+  border: none;
+  outline: none;
+  padding: 8px 11px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.makePrefect:hover {
+  background-color: #ddd;
+}
+
+@media only screen and (min-width: 900px) {
+  li {
+    padding: 44px 15px;
+  }
+
+  ul {
+    display: -webkit-inline-box;
+  }
+
+  .myBtn {
+    margin: 40px 10px;
+  }
+
+  .myDelete {
+    margin: 40px 10px;
+  }
+}
+
+@media only screen and (min-width: 1360px) {
+  #fsbuttons {
+    margin: 0 2%;
+    line-height: 100px;
+  }
 }
