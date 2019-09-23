@@ -152,4 +152,8 @@ ul {
     margin: 0 2%;
     line-height: 100px;
   }
+
+  .inqBtn {
+    margin-left: 2%;
+  }
 }

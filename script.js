@@ -121,6 +121,7 @@ function show(data) {
         firstName: "Andrei-Marius",
         lastName: "Hutupas-Antoniu",
         house: "Slytherin",
+        blood: "Purest wizard"
     }
 
     cloneMe.querySelector(".firstName").textContent = "First name: " + me.firstName;
@@ -349,8 +350,6 @@ function addToInquisitorial(button) {
         inquisitorialSquad.splice(index, 1);
         button.textContent = 'Add to Inquisitorial Squad';
     }
-
-
 }
 
 function byHufflepuff() {
@@ -399,13 +398,7 @@ function deleteStudent(element) {
 
 /* for adding and removing prefects */
 function makePrefect(makePrefectButton) {
-    // console.log(makePrefectButton.previousElementSibling);
     if (makePrefectButton.previousElementSibling.textContent == 'House: Slytherin') {
-        // if (slytherinPrefects === 0) {
-        //     makePrefectButton.nextElementSibling.style.display = "block";
-        // } else {
-        //     makePrefectButton.nextElementSibling.style.display = "none";
-        // }
         if (slytherinPrefects > 0 && makePrefectButton.textContent != 'Remove this student from Prefects') {
             slytherinPrefects--;
             makePrefectButton.textContent = "Remove this student from Prefects";
